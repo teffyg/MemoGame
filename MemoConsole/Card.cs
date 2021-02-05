@@ -12,7 +12,8 @@ namespace MemoConsole
         private bool _isVisible;
         public int Row { get { return _rowPosition; } }
         public int Column { get { return _columnPosition; } }
-        public bool IsVisible { get { return _isVisible; } }
+        public char Value { get { return _value; } }
+        public bool IsVisible { get { return _isVisible; } set { _isVisible = value ; } }
 
         public Card()
         {
@@ -21,7 +22,9 @@ namespace MemoConsole
 
         public Card(int row, int column, char value) : this()
         {
-
+            _rowPosition = row;
+            _columnPosition = column;
+            _value = value;
         }
     }
 }
