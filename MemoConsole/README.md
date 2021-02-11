@@ -3,9 +3,9 @@
 
 El juego consiste en un tablero (matriz NxM), donde cada cuadrado (Nx, My) contiene una carta.
 El inciar el juego se le presenta al usuario un menu de opciones con la dificultad. 
-    Facil -> matriz (5, 4), Segundos de cartas al descubierto = 10 
-    Intermedio -> matriz (6, 6), Segundos de cartas al descubierto = 8 
-    Experto -> matriz (8, 8), Segundos de cartas al descubierto = 4
+    Facil -> matriz (5, 4), Segundos de cartas al descubierto = 5 
+    Intermedio -> matriz (6, 6), Segundos de cartas al descubierto = 4 
+    Experto -> matriz (8, 8), Segundos de cartas al descubierto = 3
 
 
 Luego se da inicio al juego, y se presenta al usuario el tablero con ningun par de cartas al descubierto.

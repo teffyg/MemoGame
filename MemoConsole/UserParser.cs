@@ -13,16 +13,25 @@ namespace MemoConsole
 
         public GameLevelEnum ParserUserLevel(string inputLevel)
         {
-            return (GameLevelEnum)int.Parse(inputLevel);
+            int output;
+            bool success = Int32.TryParse(inputLevel, out output);
+            if (success && Enum.IsDefined(typeof(GameLevelEnum), output))
+            {
+                return (GameLevelEnum)output;
+            }
+            else
+            {
+                throw new FormatException("Dato ingresado incorrecto, intente nuevamente");
+            }
         }
 
         public Tuple<int, int> ParseUserSelection(string userInput)
         {
-            var userInputNoSpace = userInput.Replace(" ", string.Empty);
-            //string[] userInputArr = userInputNoSpace.Split() ;
-            Tuple<int, int> tuple = new Tuple<int, int>(int.Parse(userInputNoSpace[0].ToString()), int.Parse(userInputNoSpace[1].ToString()));
-            return tuple;
-
+            var userInputNoSpace = userInput.Replace(" ", string.Empty).ToUpper();
+            int asciiCharColumn = 'A';
+            var selectedColumn = userInputNoSpace[0]-asciiCharColumn;
+            var selectedRow = userInputNoSpace[1] - '1'; 
+            return new Tuple<int, int>(selectedColumn,selectedRow);
         }
     }
 }

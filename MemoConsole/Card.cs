@@ -19,7 +19,6 @@ namespace MemoConsole
         {
             _isVisible = false;
         }
-
         public Card(int row, int column, char value) : this()
         {
             _rowPosition = row;
