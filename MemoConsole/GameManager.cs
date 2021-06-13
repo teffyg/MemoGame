@@ -66,10 +66,9 @@ namespace MemoConsole
             var rows = Enumerable
                 .Range(0, str.Length / columns)
                 .Select(i => str.Substring(i * columns, columns));
-            //to indent the board
             int indent = 4;
             char space = ' ';
-            string columnsName = String.Concat(new String(space,indent) ,"A B C D E F G H ");//... 
+            string columnsName = String.Concat(new String(space,indent) ,"A B C D E F G H ");
             Console.WriteLine(columnsName.Substring(0, columns*2+indent),Console.ForegroundColor = ConsoleColor.Green);
             Console.ResetColor();
             int rowsNum= 1;

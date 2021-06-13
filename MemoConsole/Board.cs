@@ -17,17 +17,12 @@ namespace MemoConsole
             _rows = rows;
             _columns = columns;
             _cards = new List<Card>();
-            //here you could generate a list of chars 
-            // and code a logic to select a random char and use each char twice
-            //init per each (r,c) a card
             char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@$%&123456789".ToCharArray();
-            //opc1: creo otro array con los char q voy a usar duplicados (cant de acuerdo al tamano de board)
-            //lo 'desordeno' 
             int boardSize = _rows * _columns;
             char[] sampleOfChars = new Char[boardSize];
             Array.Copy(chars, sampleOfChars, boardSize/2);
-            Array.Copy(chars, 0,sampleOfChars, boardSize / 2, boardSize /2);//duplico los chars
-            //orden aleatorio de los chars
+            Array.Copy(chars, 0,sampleOfChars, boardSize / 2, boardSize /2);
+            
             Utility.Randomize(sampleOfChars);
             int charIndex = 0;
             for(var i = 0; i < rows; i++)
@@ -41,7 +36,7 @@ namespace MemoConsole
         }
         public override string ToString() 
         {
-            string result = ""; // aca agregar logica para q muestre las visibles
+            string result = ""; 
             foreach (var c in _cards)
             {
                 if (c.IsVisible)
